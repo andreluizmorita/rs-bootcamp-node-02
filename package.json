@@ -6,16 +6,18 @@
   "author": "andremorita <andreluizmorita@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon src/index.js",
+    "start": "nodemon src/index.js -e js",
     "docker-db": "docker run --name database -p 5432:5432 -d -t kartoza/postgis"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "multer": "^1.4.1",
     "nunjucks": "^3.1.4",
     "pg": "^7.6.1",
-    "sequelize": "^4.41.2"
+    "sequelize": "^4.41.2",
+    "session-file-store": "^1.2.0"
   },
   "devDependencies": {
     "eslint": "^5.9.0",
