@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.12.1/libexec/bin/yarn.js add bcryptjs
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.12.1/libexec/bin/yarn.js add multer
 
 PATH: 
   /usr/local/share/npm/bin:/Applications/MAMP/bin/php/php7.1.6/bin:/opt/local/bin:/opt/local/sbin:/Users/andre.morita/Library/Android/sdk/platform-tools:/Users/andre.morita/Library/Android/sdk/tools:/Users/andre.morita/Library/Android/sdk/build-tools/28.0.0/zipalign:/usr/local/bin:/Users/andre.morita/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/npm/bin:/Applications/MAMP/bin/php/php7.1.6/bin:/opt/local/bin:/opt/local/sbin:/Users/andre.morita/Library/Android/sdk/platform-tools:/Users/andre.morita/Library/Android/sdk/tools:/Users/andre.morita/Library/Android/sdk/build-tools/28.0.0/zipalign:/Users/andre.morita/bin:/Users/andre.morita/Library/Android/sdk//tools:/Users/andre.morita/Library/Android/sdk//platform-tools:/Users/andre.morita/Library/Android/sdk//tools:/Users/andre.morita/Library/Android/sdk//platform-tools
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/bcryptjs/-/bcryptjs-2.4.3.tgz: tunneling socket could not be established, statusCode=503
+  Error: https://registry.yarnpkg.com/multer/-/multer-1.4.1.tgz: tunneling socket could not be established, statusCode=503
       at ClientRequest.onConnect (/usr/local/Cellar/yarn/1.12.1/libexec/lib/cli.js:136998:19)
       at Object.onceWrapper (events.js:273:13)
       at ClientRequest.emit (events.js:182:13)
@@ -34,9 +34,11 @@ npm manifest:
     "author": "andremorita <andreluizmorita@gmail.com>",
     "license": "MIT",
     "scripts": {
-      "start": "nodemon src/index.js"
+      "start": "nodemon src/index.js",
+      "docker-db": "docker run --name database -p 5432:5432 -d -t kartoza/postgis"
     },
     "dependencies": {
+      "bcryptjs": "^2.4.3",
       "express": "^4.16.4",
       "nunjucks": "^3.1.4",
       "pg": "^7.6.1",
@@ -258,6 +260,11 @@ Lockfile:
       isobject "^3.0.1"
       mixin-deep "^1.2.0"
       pascalcase "^0.1.1"
+  
+  bcryptjs@^2.4.3:
+    version "2.4.3"
+    resolved "https://registry.yarnpkg.com/bcryptjs/-/bcryptjs-2.4.3.tgz#9ab5627b93e60621ff7cdac5da9733027df1d0cb"
+    integrity sha1-mrVie5PmBiH/fNrF2pczAn3x0Ms=
   
   binary-extensions@^1.0.0:
     version "1.12.0"
